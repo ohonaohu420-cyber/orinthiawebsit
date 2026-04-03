@@ -1,63 +1,70 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Ohuu Interactive Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ohuu Cakes - Order</title>
     <style>
         body {
-            background-color: #fce4ec;
-            text-align: center;
             font-family: Arial, sans-serif;
-            margin-top: 50px;
-            transition: background-color 0.5s;
+            background-color: #fff0f5;
+            color: #4a148c;
+            text-align: center;
+            padding: 50px 20px;
         }
 
         h1 {
             color: #e91e63;
-            transition: color 0.5s;
-        }
-
-        h1:hover {
-            color: #ff4081;
         }
 
         p {
-            color: #4a148c;
-            font-size: 20px;
+            font-size: 18px;
         }
 
         button {
             background-color: #e91e63;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 15px 30px;
             font-size: 18px;
             cursor: pointer;
-            border-radius: 5px;
-            margin-top: 20px;
+            border-radius: 8px;
             transition: background-color 0.3s, transform 0.3s;
         }
 
         button:hover {
             background-color: #ff4081;
-            transform: scale(1.1);
+            transform: scale(1.05);
+        }
+
+        .payment-info {
+            display: none;
+            margin-top: 30px;
+            background-color: #f8bbd0;
+            padding: 20px;
+            border-radius: 10px;
+            color: #4a148c;
         }
     </style>
 </head>
 <body>
 
-    <h1>Hello Ohuu 😍</h1>
-    <p>Eta amar interactive website!</p>
-    <button id="myButton">Change Background 💖</button>
+    <h1>Ohuu Cakes 🎂</h1>
+    <p>Click the button below to order & pay for your cake.</p>
+    <button onclick="showPayment()">Order Now</button>
+
+    <div class="payment-info" id="paymentInfo">
+        <h2>Payment Instructions 💖</h2>
+        <p><strong>PayPal:</strong> Send your payment to <a href="https://www.paypal.me/YourPayPalID" target="_blank">https://www.paypal.me/YourPayPalID</a></p>
+        <p><strong>bKash:</strong> Send your payment to <strong>+880 123456789</strong> and include your order details.</p>
+        <p>After payment, message us with your order details and we will confirm your order.</p>
+    </div>
 
     <script>
-        const colors = ["#fce4ec", "#f3e5f5", "#e1bee7", "#f8bbd0", "#f48fb1"];
-        let i = 0;
-
-        document.getElementById("myButton").onclick = function() {
-            document.body.style.backgroundColor = colors[i];
-            i++;
-            if(i >= colors.length) i = 0;
+        function showPayment() {
+            const info = document.getElementById('paymentInfo');
+            info.style.display = 'block';
+            info.scrollIntoView({behavior: "smooth"});
         }
     </script>
 
